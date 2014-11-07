@@ -77,12 +77,10 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-check_PROGRAMS = cndrv1$(EXEEXT) cndrv2$(EXEEXT) cndrv3$(EXEEXT) \
-	cndrv4$(EXEEXT) zndrv1$(EXEEXT) zndrv2$(EXEEXT) \
-	zndrv3$(EXEEXT) zndrv4$(EXEEXT)
 TESTS = cndrv1$(EXEEXT) cndrv2$(EXEEXT) cndrv3$(EXEEXT) \
 	cndrv4$(EXEEXT) zndrv1$(EXEEXT) zndrv2$(EXEEXT) \
 	zndrv3$(EXEEXT) zndrv4$(EXEEXT)
+check_PROGRAMS = $(am__EXEEXT_1)
 subdir = EXAMPLES/COMPLEX
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/test-driver README
@@ -97,8 +95,12 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am_cndrv1_OBJECTS = cndrv1.$(OBJEXT)
-cndrv1_OBJECTS = $(am_cndrv1_OBJECTS)
+am__EXEEXT_1 = cndrv1$(EXEEXT) cndrv2$(EXEEXT) cndrv3$(EXEEXT) \
+	cndrv4$(EXEEXT) zndrv1$(EXEEXT) zndrv2$(EXEEXT) \
+	zndrv3$(EXEEXT) zndrv4$(EXEEXT)
+cndrv1_SOURCES = cndrv1.f
+cndrv1_OBJECTS = cndrv1.$(OBJEXT)
+cndrv1_LDADD = $(LDADD)
 am__DEPENDENCIES_1 =
 cndrv1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
@@ -106,32 +108,39 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am_cndrv2_OBJECTS = cndrv2.$(OBJEXT)
-cndrv2_OBJECTS = $(am_cndrv2_OBJECTS)
+cndrv2_SOURCES = cndrv2.f
+cndrv2_OBJECTS = cndrv2.$(OBJEXT)
+cndrv2_LDADD = $(LDADD)
 cndrv2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_cndrv3_OBJECTS = cndrv3.$(OBJEXT)
-cndrv3_OBJECTS = $(am_cndrv3_OBJECTS)
+cndrv3_SOURCES = cndrv3.f
+cndrv3_OBJECTS = cndrv3.$(OBJEXT)
+cndrv3_LDADD = $(LDADD)
 cndrv3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_cndrv4_OBJECTS = cndrv4.$(OBJEXT)
-cndrv4_OBJECTS = $(am_cndrv4_OBJECTS)
+cndrv4_SOURCES = cndrv4.f
+cndrv4_OBJECTS = cndrv4.$(OBJEXT)
+cndrv4_LDADD = $(LDADD)
 cndrv4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_zndrv1_OBJECTS = zndrv1.$(OBJEXT)
-zndrv1_OBJECTS = $(am_zndrv1_OBJECTS)
+zndrv1_SOURCES = zndrv1.f
+zndrv1_OBJECTS = zndrv1.$(OBJEXT)
+zndrv1_LDADD = $(LDADD)
 zndrv1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_zndrv2_OBJECTS = zndrv2.$(OBJEXT)
-zndrv2_OBJECTS = $(am_zndrv2_OBJECTS)
+zndrv2_SOURCES = zndrv2.f
+zndrv2_OBJECTS = zndrv2.$(OBJEXT)
+zndrv2_LDADD = $(LDADD)
 zndrv2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_zndrv3_OBJECTS = zndrv3.$(OBJEXT)
-zndrv3_OBJECTS = $(am_zndrv3_OBJECTS)
+zndrv3_SOURCES = zndrv3.f
+zndrv3_OBJECTS = zndrv3.$(OBJEXT)
+zndrv3_LDADD = $(LDADD)
 zndrv3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_zndrv4_OBJECTS = zndrv4.$(OBJEXT)
-zndrv4_OBJECTS = $(am_zndrv4_OBJECTS)
+zndrv4_SOURCES = zndrv4.f
+zndrv4_OBJECTS = zndrv4.$(OBJEXT)
+zndrv4_LDADD = $(LDADD)
 zndrv4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -162,12 +171,10 @@ AM_V_F77LD = $(am__v_F77LD_@AM_V@)
 am__v_F77LD_ = $(am__v_F77LD_@AM_DEFAULT_V@)
 am__v_F77LD_0 = @echo "  F77LD   " $@;
 am__v_F77LD_1 = 
-SOURCES = $(cndrv1_SOURCES) $(cndrv2_SOURCES) $(cndrv3_SOURCES) \
-	$(cndrv4_SOURCES) $(zndrv1_SOURCES) $(zndrv2_SOURCES) \
-	$(zndrv3_SOURCES) $(zndrv4_SOURCES)
-DIST_SOURCES = $(cndrv1_SOURCES) $(cndrv2_SOURCES) $(cndrv3_SOURCES) \
-	$(cndrv4_SOURCES) $(zndrv1_SOURCES) $(zndrv2_SOURCES) \
-	$(zndrv3_SOURCES) $(zndrv4_SOURCES)
+SOURCES = cndrv1.f cndrv2.f cndrv3.f cndrv4.f zndrv1.f zndrv2.f \
+	zndrv3.f zndrv4.f
+DIST_SOURCES = cndrv1.f cndrv2.f cndrv3.f cndrv4.f zndrv1.f zndrv2.f \
+	zndrv3.f zndrv4.f
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -521,22 +528,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-cndrv1_SOURCES = cndrv1.f
-cndrv1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-cndrv2_SOURCES = cndrv2.f
-cndrv2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-cndrv3_SOURCES = cndrv3.f
-cndrv3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-cndrv4_SOURCES = cndrv4.f
-cndrv4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-zndrv1_SOURCES = zndrv1.f
-zndrv1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-zndrv2_SOURCES = zndrv2.f
-zndrv2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-zndrv3_SOURCES = zndrv3.f
-zndrv3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-zndrv4_SOURCES = zndrv4.f
-zndrv4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
+AM_DEFAULT_SOURCE_EXT = .f
+LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 all: all-am
 
 .SUFFIXES:

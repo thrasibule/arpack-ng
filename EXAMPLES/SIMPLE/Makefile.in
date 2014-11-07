@@ -77,10 +77,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-check_PROGRAMS = cnsimp$(EXEEXT) dnsimp$(EXEEXT) dssimp$(EXEEXT) \
-	snsimp$(EXEEXT) sssimp$(EXEEXT) znsimp$(EXEEXT)
 TESTS = cnsimp$(EXEEXT) dnsimp$(EXEEXT) dssimp$(EXEEXT) \
 	snsimp$(EXEEXT) sssimp$(EXEEXT) znsimp$(EXEEXT)
+check_PROGRAMS = $(am__EXEEXT_1)
 subdir = EXAMPLES/SIMPLE
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/test-driver README
@@ -95,8 +94,11 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am_cnsimp_OBJECTS = cnsimp.$(OBJEXT)
-cnsimp_OBJECTS = $(am_cnsimp_OBJECTS)
+am__EXEEXT_1 = cnsimp$(EXEEXT) dnsimp$(EXEEXT) dssimp$(EXEEXT) \
+	snsimp$(EXEEXT) sssimp$(EXEEXT) znsimp$(EXEEXT)
+cnsimp_SOURCES = cnsimp.f
+cnsimp_OBJECTS = cnsimp.$(OBJEXT)
+cnsimp_LDADD = $(LDADD)
 am__DEPENDENCIES_1 =
 cnsimp_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
@@ -104,24 +106,29 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am_dnsimp_OBJECTS = dnsimp.$(OBJEXT)
-dnsimp_OBJECTS = $(am_dnsimp_OBJECTS)
+dnsimp_SOURCES = dnsimp.f
+dnsimp_OBJECTS = dnsimp.$(OBJEXT)
+dnsimp_LDADD = $(LDADD)
 dnsimp_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_dssimp_OBJECTS = dssimp.$(OBJEXT)
-dssimp_OBJECTS = $(am_dssimp_OBJECTS)
+dssimp_SOURCES = dssimp.f
+dssimp_OBJECTS = dssimp.$(OBJEXT)
+dssimp_LDADD = $(LDADD)
 dssimp_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_snsimp_OBJECTS = snsimp.$(OBJEXT)
-snsimp_OBJECTS = $(am_snsimp_OBJECTS)
+snsimp_SOURCES = snsimp.f
+snsimp_OBJECTS = snsimp.$(OBJEXT)
+snsimp_LDADD = $(LDADD)
 snsimp_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_sssimp_OBJECTS = sssimp.$(OBJEXT)
-sssimp_OBJECTS = $(am_sssimp_OBJECTS)
+sssimp_SOURCES = sssimp.f
+sssimp_OBJECTS = sssimp.$(OBJEXT)
+sssimp_LDADD = $(LDADD)
 sssimp_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_znsimp_OBJECTS = znsimp.$(OBJEXT)
-znsimp_OBJECTS = $(am_znsimp_OBJECTS)
+znsimp_SOURCES = znsimp.f
+znsimp_OBJECTS = znsimp.$(OBJEXT)
+znsimp_LDADD = $(LDADD)
 znsimp_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -152,10 +159,8 @@ AM_V_F77LD = $(am__v_F77LD_@AM_V@)
 am__v_F77LD_ = $(am__v_F77LD_@AM_DEFAULT_V@)
 am__v_F77LD_0 = @echo "  F77LD   " $@;
 am__v_F77LD_1 = 
-SOURCES = $(cnsimp_SOURCES) $(dnsimp_SOURCES) $(dssimp_SOURCES) \
-	$(snsimp_SOURCES) $(sssimp_SOURCES) $(znsimp_SOURCES)
-DIST_SOURCES = $(cnsimp_SOURCES) $(dnsimp_SOURCES) $(dssimp_SOURCES) \
-	$(snsimp_SOURCES) $(sssimp_SOURCES) $(znsimp_SOURCES)
+SOURCES = cnsimp.f dnsimp.f dssimp.f snsimp.f sssimp.f znsimp.f
+DIST_SOURCES = cnsimp.f dnsimp.f dssimp.f snsimp.f sssimp.f znsimp.f
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -509,18 +514,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-cnsimp_SOURCES = cnsimp.f
-cnsimp_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dnsimp_SOURCES = dnsimp.f
-dnsimp_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dssimp_SOURCES = dssimp.f
-dssimp_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-snsimp_SOURCES = snsimp.f
-snsimp_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-sssimp_SOURCES = sssimp.f
-sssimp_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-znsimp_SOURCES = znsimp.f
-znsimp_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
+AM_DEFAULT_SOURCE_EXT = .f
+LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 all: all-am
 
 .SUFFIXES:

@@ -77,17 +77,6 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-check_PROGRAMS = cnbdr1$(EXEEXT) cnbdr2$(EXEEXT) cnbdr3$(EXEEXT) \
-	cnbdr4$(EXEEXT) dnbdr1$(EXEEXT) dnbdr2$(EXEEXT) \
-	dnbdr3$(EXEEXT) dnbdr4$(EXEEXT) dnbdr5$(EXEEXT) \
-	dnbdr6$(EXEEXT) dsbdr1$(EXEEXT) dsbdr2$(EXEEXT) \
-	dsbdr3$(EXEEXT) dsbdr4$(EXEEXT) dsbdr5$(EXEEXT) \
-	dsbdr6$(EXEEXT) snbdr1$(EXEEXT) snbdr2$(EXEEXT) \
-	snbdr3$(EXEEXT) snbdr4$(EXEEXT) snbdr5$(EXEEXT) \
-	snbdr6$(EXEEXT) ssbdr1$(EXEEXT) ssbdr2$(EXEEXT) \
-	ssbdr3$(EXEEXT) ssbdr4$(EXEEXT) ssbdr5$(EXEEXT) \
-	ssbdr6$(EXEEXT) znbdr1$(EXEEXT) znbdr2$(EXEEXT) \
-	znbdr3$(EXEEXT) znbdr4$(EXEEXT)
 TESTS = cnbdr1$(EXEEXT) cnbdr2$(EXEEXT) cnbdr3$(EXEEXT) \
 	cnbdr4$(EXEEXT) dnbdr1$(EXEEXT) dnbdr2$(EXEEXT) \
 	dnbdr3$(EXEEXT) dnbdr4$(EXEEXT) dnbdr5$(EXEEXT) \
@@ -99,6 +88,7 @@ TESTS = cnbdr1$(EXEEXT) cnbdr2$(EXEEXT) cnbdr3$(EXEEXT) \
 	ssbdr3$(EXEEXT) ssbdr4$(EXEEXT) ssbdr5$(EXEEXT) \
 	ssbdr6$(EXEEXT) znbdr1$(EXEEXT) znbdr2$(EXEEXT) \
 	znbdr3$(EXEEXT) znbdr4$(EXEEXT)
+check_PROGRAMS = $(am__EXEEXT_1)
 subdir = EXAMPLES/BAND
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/test-driver README
@@ -113,8 +103,20 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
+am__EXEEXT_1 = cnbdr1$(EXEEXT) cnbdr2$(EXEEXT) cnbdr3$(EXEEXT) \
+	cnbdr4$(EXEEXT) dnbdr1$(EXEEXT) dnbdr2$(EXEEXT) \
+	dnbdr3$(EXEEXT) dnbdr4$(EXEEXT) dnbdr5$(EXEEXT) \
+	dnbdr6$(EXEEXT) dsbdr1$(EXEEXT) dsbdr2$(EXEEXT) \
+	dsbdr3$(EXEEXT) dsbdr4$(EXEEXT) dsbdr5$(EXEEXT) \
+	dsbdr6$(EXEEXT) snbdr1$(EXEEXT) snbdr2$(EXEEXT) \
+	snbdr3$(EXEEXT) snbdr4$(EXEEXT) snbdr5$(EXEEXT) \
+	snbdr6$(EXEEXT) ssbdr1$(EXEEXT) ssbdr2$(EXEEXT) \
+	ssbdr3$(EXEEXT) ssbdr4$(EXEEXT) ssbdr5$(EXEEXT) \
+	ssbdr6$(EXEEXT) znbdr1$(EXEEXT) znbdr2$(EXEEXT) \
+	znbdr3$(EXEEXT) znbdr4$(EXEEXT)
 am_cnbdr1_OBJECTS = cnbdr1.$(OBJEXT) cnband.$(OBJEXT)
 cnbdr1_OBJECTS = $(am_cnbdr1_OBJECTS)
+cnbdr1_LDADD = $(LDADD)
 am__DEPENDENCIES_1 =
 cnbdr1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
@@ -124,126 +126,157 @@ am__v_lt_0 = --silent
 am__v_lt_1 = 
 am_cnbdr2_OBJECTS = cnbdr2.$(OBJEXT) cnband.$(OBJEXT)
 cnbdr2_OBJECTS = $(am_cnbdr2_OBJECTS)
+cnbdr2_LDADD = $(LDADD)
 cnbdr2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_cnbdr3_OBJECTS = cnbdr3.$(OBJEXT) cnband.$(OBJEXT)
 cnbdr3_OBJECTS = $(am_cnbdr3_OBJECTS)
+cnbdr3_LDADD = $(LDADD)
 cnbdr3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_cnbdr4_OBJECTS = cnbdr4.$(OBJEXT) cnband.$(OBJEXT)
 cnbdr4_OBJECTS = $(am_cnbdr4_OBJECTS)
+cnbdr4_LDADD = $(LDADD)
 cnbdr4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dnbdr1_OBJECTS = dnbdr1.$(OBJEXT) dnband.$(OBJEXT)
 dnbdr1_OBJECTS = $(am_dnbdr1_OBJECTS)
+dnbdr1_LDADD = $(LDADD)
 dnbdr1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dnbdr2_OBJECTS = dnbdr2.$(OBJEXT) dnband.$(OBJEXT)
 dnbdr2_OBJECTS = $(am_dnbdr2_OBJECTS)
+dnbdr2_LDADD = $(LDADD)
 dnbdr2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dnbdr3_OBJECTS = dnbdr3.$(OBJEXT) dnband.$(OBJEXT)
 dnbdr3_OBJECTS = $(am_dnbdr3_OBJECTS)
+dnbdr3_LDADD = $(LDADD)
 dnbdr3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dnbdr4_OBJECTS = dnbdr4.$(OBJEXT) dnband.$(OBJEXT)
 dnbdr4_OBJECTS = $(am_dnbdr4_OBJECTS)
+dnbdr4_LDADD = $(LDADD)
 dnbdr4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dnbdr5_OBJECTS = dnbdr5.$(OBJEXT) dnband.$(OBJEXT)
 dnbdr5_OBJECTS = $(am_dnbdr5_OBJECTS)
+dnbdr5_LDADD = $(LDADD)
 dnbdr5_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dnbdr6_OBJECTS = dnbdr6.$(OBJEXT) dnband.$(OBJEXT)
 dnbdr6_OBJECTS = $(am_dnbdr6_OBJECTS)
+dnbdr6_LDADD = $(LDADD)
 dnbdr6_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dsbdr1_OBJECTS = dsbdr1.$(OBJEXT) dsband.$(OBJEXT)
 dsbdr1_OBJECTS = $(am_dsbdr1_OBJECTS)
+dsbdr1_LDADD = $(LDADD)
 dsbdr1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dsbdr2_OBJECTS = dsbdr2.$(OBJEXT) dsband.$(OBJEXT)
 dsbdr2_OBJECTS = $(am_dsbdr2_OBJECTS)
+dsbdr2_LDADD = $(LDADD)
 dsbdr2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dsbdr3_OBJECTS = dsbdr3.$(OBJEXT) dsband.$(OBJEXT)
 dsbdr3_OBJECTS = $(am_dsbdr3_OBJECTS)
+dsbdr3_LDADD = $(LDADD)
 dsbdr3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dsbdr4_OBJECTS = dsbdr4.$(OBJEXT) dsband.$(OBJEXT)
 dsbdr4_OBJECTS = $(am_dsbdr4_OBJECTS)
+dsbdr4_LDADD = $(LDADD)
 dsbdr4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dsbdr5_OBJECTS = dsbdr5.$(OBJEXT) dsband.$(OBJEXT)
 dsbdr5_OBJECTS = $(am_dsbdr5_OBJECTS)
+dsbdr5_LDADD = $(LDADD)
 dsbdr5_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_dsbdr6_OBJECTS = dsbdr6.$(OBJEXT) dsband.$(OBJEXT)
 dsbdr6_OBJECTS = $(am_dsbdr6_OBJECTS)
+dsbdr6_LDADD = $(LDADD)
 dsbdr6_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_snbdr1_OBJECTS = snbdr1.$(OBJEXT) snband.$(OBJEXT)
 snbdr1_OBJECTS = $(am_snbdr1_OBJECTS)
+snbdr1_LDADD = $(LDADD)
 snbdr1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_snbdr2_OBJECTS = snbdr2.$(OBJEXT) snband.$(OBJEXT)
 snbdr2_OBJECTS = $(am_snbdr2_OBJECTS)
+snbdr2_LDADD = $(LDADD)
 snbdr2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_snbdr3_OBJECTS = snbdr3.$(OBJEXT) snband.$(OBJEXT)
 snbdr3_OBJECTS = $(am_snbdr3_OBJECTS)
+snbdr3_LDADD = $(LDADD)
 snbdr3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_snbdr4_OBJECTS = snbdr4.$(OBJEXT) snband.$(OBJEXT)
 snbdr4_OBJECTS = $(am_snbdr4_OBJECTS)
+snbdr4_LDADD = $(LDADD)
 snbdr4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_snbdr5_OBJECTS = snbdr5.$(OBJEXT) snband.$(OBJEXT)
 snbdr5_OBJECTS = $(am_snbdr5_OBJECTS)
+snbdr5_LDADD = $(LDADD)
 snbdr5_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_snbdr6_OBJECTS = snbdr6.$(OBJEXT) snband.$(OBJEXT)
 snbdr6_OBJECTS = $(am_snbdr6_OBJECTS)
+snbdr6_LDADD = $(LDADD)
 snbdr6_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_ssbdr1_OBJECTS = ssbdr1.$(OBJEXT) ssband.$(OBJEXT)
 ssbdr1_OBJECTS = $(am_ssbdr1_OBJECTS)
+ssbdr1_LDADD = $(LDADD)
 ssbdr1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_ssbdr2_OBJECTS = ssbdr2.$(OBJEXT) ssband.$(OBJEXT)
 ssbdr2_OBJECTS = $(am_ssbdr2_OBJECTS)
+ssbdr2_LDADD = $(LDADD)
 ssbdr2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_ssbdr3_OBJECTS = ssbdr3.$(OBJEXT) ssband.$(OBJEXT)
 ssbdr3_OBJECTS = $(am_ssbdr3_OBJECTS)
+ssbdr3_LDADD = $(LDADD)
 ssbdr3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_ssbdr4_OBJECTS = ssbdr4.$(OBJEXT) ssband.$(OBJEXT)
 ssbdr4_OBJECTS = $(am_ssbdr4_OBJECTS)
+ssbdr4_LDADD = $(LDADD)
 ssbdr4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_ssbdr5_OBJECTS = ssbdr5.$(OBJEXT) ssband.$(OBJEXT)
 ssbdr5_OBJECTS = $(am_ssbdr5_OBJECTS)
+ssbdr5_LDADD = $(LDADD)
 ssbdr5_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_ssbdr6_OBJECTS = ssbdr6.$(OBJEXT) ssband.$(OBJEXT)
 ssbdr6_OBJECTS = $(am_ssbdr6_OBJECTS)
+ssbdr6_LDADD = $(LDADD)
 ssbdr6_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_znbdr1_OBJECTS = znbdr1.$(OBJEXT) znband.$(OBJEXT)
 znbdr1_OBJECTS = $(am_znbdr1_OBJECTS)
+znbdr1_LDADD = $(LDADD)
 znbdr1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_znbdr2_OBJECTS = znbdr2.$(OBJEXT) znband.$(OBJEXT)
 znbdr2_OBJECTS = $(am_znbdr2_OBJECTS)
+znbdr2_LDADD = $(LDADD)
 znbdr2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_znbdr3_OBJECTS = znbdr3.$(OBJEXT) znband.$(OBJEXT)
 znbdr3_OBJECTS = $(am_znbdr3_OBJECTS)
+znbdr3_LDADD = $(LDADD)
 znbdr3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_znbdr4_OBJECTS = znbdr4.$(OBJEXT) znband.$(OBJEXT)
 znbdr4_OBJECTS = $(am_znbdr4_OBJECTS)
+znbdr4_LDADD = $(LDADD)
 znbdr4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -649,72 +682,39 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
+LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 cnbdr1_SOURCES = cnbdr1.f cnband.f
-cnbdr1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 cnbdr2_SOURCES = cnbdr2.f cnband.f
-cnbdr2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 cnbdr3_SOURCES = cnbdr3.f cnband.f
-cnbdr3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 cnbdr4_SOURCES = cnbdr4.f cnband.f
-cnbdr4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dnbdr1_SOURCES = dnbdr1.f dnband.f
-dnbdr1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dnbdr2_SOURCES = dnbdr2.f dnband.f
-dnbdr2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dnbdr3_SOURCES = dnbdr3.f dnband.f
-dnbdr3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dnbdr4_SOURCES = dnbdr4.f dnband.f
-dnbdr4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dnbdr5_SOURCES = dnbdr5.f dnband.f
-dnbdr5_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dnbdr6_SOURCES = dnbdr6.f dnband.f
-dnbdr6_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dsbdr1_SOURCES = dsbdr1.f dsband.f
-dsbdr1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dsbdr2_SOURCES = dsbdr2.f dsband.f
-dsbdr2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dsbdr3_SOURCES = dsbdr3.f dsband.f
-dsbdr3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dsbdr4_SOURCES = dsbdr4.f dsband.f
-dsbdr4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dsbdr5_SOURCES = dsbdr5.f dsband.f
-dsbdr5_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 dsbdr6_SOURCES = dsbdr6.f dsband.f
-dsbdr6_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-snband_SOURCES = snband.f
-snband_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 snbdr1_SOURCES = snbdr1.f snband.f
-snbdr1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 snbdr2_SOURCES = snbdr2.f snband.f
-snbdr2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 snbdr3_SOURCES = snbdr3.f snband.f
-snbdr3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 snbdr4_SOURCES = snbdr4.f snband.f
-snbdr4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 snbdr5_SOURCES = snbdr5.f snband.f
-snbdr5_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 snbdr6_SOURCES = snbdr6.f snband.f
-snbdr6_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 ssbdr1_SOURCES = ssbdr1.f ssband.f
-ssbdr1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 ssbdr2_SOURCES = ssbdr2.f ssband.f
-ssbdr2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 ssbdr3_SOURCES = ssbdr3.f ssband.f
-ssbdr3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 ssbdr4_SOURCES = ssbdr4.f ssband.f
-ssbdr4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 ssbdr5_SOURCES = ssbdr5.f ssband.f
-ssbdr5_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 ssbdr6_SOURCES = ssbdr6.f ssband.f
-ssbdr6_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 znbdr1_SOURCES = znbdr1.f znband.f
-znbdr1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 znbdr2_SOURCES = znbdr2.f znband.f
-znbdr2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 znbdr3_SOURCES = znbdr3.f znband.f
-znbdr3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 znbdr4_SOURCES = znbdr4.f znband.f
-znbdr4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 all: all-am
 
 .SUFFIXES:

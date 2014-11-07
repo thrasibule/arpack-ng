@@ -77,14 +77,11 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-check_PROGRAMS = dsdrv1$(EXEEXT) dsdrv2$(EXEEXT) dsdrv3$(EXEEXT) \
-	dsdrv4$(EXEEXT) dsdrv5$(EXEEXT) dsdrv6$(EXEEXT) \
-	ssdrv1$(EXEEXT) ssdrv2$(EXEEXT) ssdrv3$(EXEEXT) \
-	ssdrv4$(EXEEXT) ssdrv5$(EXEEXT) ssdrv6$(EXEEXT)
 TESTS = dsdrv1$(EXEEXT) dsdrv2$(EXEEXT) dsdrv3$(EXEEXT) \
 	dsdrv4$(EXEEXT) dsdrv5$(EXEEXT) dsdrv6$(EXEEXT) \
 	ssdrv1$(EXEEXT) ssdrv2$(EXEEXT) ssdrv3$(EXEEXT) \
 	ssdrv4$(EXEEXT) ssdrv5$(EXEEXT) ssdrv6$(EXEEXT)
+check_PROGRAMS = $(am__EXEEXT_1)
 subdir = EXAMPLES/SYM
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/test-driver README
@@ -99,8 +96,13 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am_dsdrv1_OBJECTS = dsdrv1.$(OBJEXT)
-dsdrv1_OBJECTS = $(am_dsdrv1_OBJECTS)
+am__EXEEXT_1 = dsdrv1$(EXEEXT) dsdrv2$(EXEEXT) dsdrv3$(EXEEXT) \
+	dsdrv4$(EXEEXT) dsdrv5$(EXEEXT) dsdrv6$(EXEEXT) \
+	ssdrv1$(EXEEXT) ssdrv2$(EXEEXT) ssdrv3$(EXEEXT) \
+	ssdrv4$(EXEEXT) ssdrv5$(EXEEXT) ssdrv6$(EXEEXT)
+dsdrv1_SOURCES = dsdrv1.f
+dsdrv1_OBJECTS = dsdrv1.$(OBJEXT)
+dsdrv1_LDADD = $(LDADD)
 am__DEPENDENCIES_1 =
 dsdrv1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
@@ -108,48 +110,59 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am_dsdrv2_OBJECTS = dsdrv2.$(OBJEXT)
-dsdrv2_OBJECTS = $(am_dsdrv2_OBJECTS)
+dsdrv2_SOURCES = dsdrv2.f
+dsdrv2_OBJECTS = dsdrv2.$(OBJEXT)
+dsdrv2_LDADD = $(LDADD)
 dsdrv2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_dsdrv3_OBJECTS = dsdrv3.$(OBJEXT)
-dsdrv3_OBJECTS = $(am_dsdrv3_OBJECTS)
+dsdrv3_SOURCES = dsdrv3.f
+dsdrv3_OBJECTS = dsdrv3.$(OBJEXT)
+dsdrv3_LDADD = $(LDADD)
 dsdrv3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_dsdrv4_OBJECTS = dsdrv4.$(OBJEXT)
-dsdrv4_OBJECTS = $(am_dsdrv4_OBJECTS)
+dsdrv4_SOURCES = dsdrv4.f
+dsdrv4_OBJECTS = dsdrv4.$(OBJEXT)
+dsdrv4_LDADD = $(LDADD)
 dsdrv4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_dsdrv5_OBJECTS = dsdrv5.$(OBJEXT)
-dsdrv5_OBJECTS = $(am_dsdrv5_OBJECTS)
+dsdrv5_SOURCES = dsdrv5.f
+dsdrv5_OBJECTS = dsdrv5.$(OBJEXT)
+dsdrv5_LDADD = $(LDADD)
 dsdrv5_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_dsdrv6_OBJECTS = dsdrv6.$(OBJEXT)
-dsdrv6_OBJECTS = $(am_dsdrv6_OBJECTS)
+dsdrv6_SOURCES = dsdrv6.f
+dsdrv6_OBJECTS = dsdrv6.$(OBJEXT)
+dsdrv6_LDADD = $(LDADD)
 dsdrv6_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_ssdrv1_OBJECTS = ssdrv1.$(OBJEXT)
-ssdrv1_OBJECTS = $(am_ssdrv1_OBJECTS)
+ssdrv1_SOURCES = ssdrv1.f
+ssdrv1_OBJECTS = ssdrv1.$(OBJEXT)
+ssdrv1_LDADD = $(LDADD)
 ssdrv1_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_ssdrv2_OBJECTS = ssdrv2.$(OBJEXT)
-ssdrv2_OBJECTS = $(am_ssdrv2_OBJECTS)
+ssdrv2_SOURCES = ssdrv2.f
+ssdrv2_OBJECTS = ssdrv2.$(OBJEXT)
+ssdrv2_LDADD = $(LDADD)
 ssdrv2_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_ssdrv3_OBJECTS = ssdrv3.$(OBJEXT)
-ssdrv3_OBJECTS = $(am_ssdrv3_OBJECTS)
+ssdrv3_SOURCES = ssdrv3.f
+ssdrv3_OBJECTS = ssdrv3.$(OBJEXT)
+ssdrv3_LDADD = $(LDADD)
 ssdrv3_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_ssdrv4_OBJECTS = ssdrv4.$(OBJEXT)
-ssdrv4_OBJECTS = $(am_ssdrv4_OBJECTS)
+ssdrv4_SOURCES = ssdrv4.f
+ssdrv4_OBJECTS = ssdrv4.$(OBJEXT)
+ssdrv4_LDADD = $(LDADD)
 ssdrv4_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_ssdrv5_OBJECTS = ssdrv5.$(OBJEXT)
-ssdrv5_OBJECTS = $(am_ssdrv5_OBJECTS)
+ssdrv5_SOURCES = ssdrv5.f
+ssdrv5_OBJECTS = ssdrv5.$(OBJEXT)
+ssdrv5_LDADD = $(LDADD)
 ssdrv5_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-am_ssdrv6_OBJECTS = ssdrv6.$(OBJEXT)
-ssdrv6_OBJECTS = $(am_ssdrv6_OBJECTS)
+ssdrv6_SOURCES = ssdrv6.f
+ssdrv6_OBJECTS = ssdrv6.$(OBJEXT)
+ssdrv6_LDADD = $(LDADD)
 ssdrv6_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -180,14 +193,10 @@ AM_V_F77LD = $(am__v_F77LD_@AM_V@)
 am__v_F77LD_ = $(am__v_F77LD_@AM_DEFAULT_V@)
 am__v_F77LD_0 = @echo "  F77LD   " $@;
 am__v_F77LD_1 = 
-SOURCES = $(dsdrv1_SOURCES) $(dsdrv2_SOURCES) $(dsdrv3_SOURCES) \
-	$(dsdrv4_SOURCES) $(dsdrv5_SOURCES) $(dsdrv6_SOURCES) \
-	$(ssdrv1_SOURCES) $(ssdrv2_SOURCES) $(ssdrv3_SOURCES) \
-	$(ssdrv4_SOURCES) $(ssdrv5_SOURCES) $(ssdrv6_SOURCES)
-DIST_SOURCES = $(dsdrv1_SOURCES) $(dsdrv2_SOURCES) $(dsdrv3_SOURCES) \
-	$(dsdrv4_SOURCES) $(dsdrv5_SOURCES) $(dsdrv6_SOURCES) \
-	$(ssdrv1_SOURCES) $(ssdrv2_SOURCES) $(ssdrv3_SOURCES) \
-	$(ssdrv4_SOURCES) $(ssdrv5_SOURCES) $(ssdrv6_SOURCES)
+SOURCES = dsdrv1.f dsdrv2.f dsdrv3.f dsdrv4.f dsdrv5.f dsdrv6.f \
+	ssdrv1.f ssdrv2.f ssdrv3.f ssdrv4.f ssdrv5.f ssdrv6.f
+DIST_SOURCES = dsdrv1.f dsdrv2.f dsdrv3.f dsdrv4.f dsdrv5.f dsdrv6.f \
+	ssdrv1.f ssdrv2.f ssdrv3.f ssdrv4.f ssdrv5.f ssdrv6.f
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -541,30 +550,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-dsdrv1_SOURCES = dsdrv1.f
-dsdrv1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dsdrv2_SOURCES = dsdrv2.f
-dsdrv2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dsdrv3_SOURCES = dsdrv3.f
-dsdrv3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dsdrv4_SOURCES = dsdrv4.f
-dsdrv4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dsdrv5_SOURCES = dsdrv5.f
-dsdrv5_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-dsdrv6_SOURCES = dsdrv6.f
-dsdrv6_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssdrv1_SOURCES = ssdrv1.f
-ssdrv1_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssdrv2_SOURCES = ssdrv2.f
-ssdrv2_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssdrv3_SOURCES = ssdrv3.f
-ssdrv3_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssdrv4_SOURCES = ssdrv4.f
-ssdrv4_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssdrv5_SOURCES = ssdrv5.f
-ssdrv5_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssdrv6_SOURCES = ssdrv6.f
-ssdrv6_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
+AM_DEFAULT_SOURCE_EXT = .f
+LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 all: all-am
 
 .SUFFIXES:

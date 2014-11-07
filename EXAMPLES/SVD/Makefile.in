@@ -77,8 +77,8 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-check_PROGRAMS = dsvd$(EXEEXT) ssvd$(EXEEXT)
 TESTS = dsvd$(EXEEXT) ssvd$(EXEEXT)
+check_PROGRAMS = $(am__EXEEXT_1)
 subdir = EXAMPLES/SVD
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/test-driver README
@@ -93,8 +93,10 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-am_dsvd_OBJECTS = dsvd.$(OBJEXT)
-dsvd_OBJECTS = $(am_dsvd_OBJECTS)
+am__EXEEXT_1 = dsvd$(EXEEXT) ssvd$(EXEEXT)
+dsvd_SOURCES = dsvd.f
+dsvd_OBJECTS = dsvd.$(OBJEXT)
+dsvd_LDADD = $(LDADD)
 am__DEPENDENCIES_1 =
 dsvd_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
@@ -102,8 +104,9 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am_ssvd_OBJECTS = ssvd.$(OBJEXT)
-ssvd_OBJECTS = $(am_ssvd_OBJECTS)
+ssvd_SOURCES = ssvd.f
+ssvd_OBJECTS = ssvd.$(OBJEXT)
+ssvd_LDADD = $(LDADD)
 ssvd_DEPENDENCIES = ../../libarpack.la $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -134,8 +137,8 @@ AM_V_F77LD = $(am__v_F77LD_@AM_V@)
 am__v_F77LD_ = $(am__v_F77LD_@AM_DEFAULT_V@)
 am__v_F77LD_0 = @echo "  F77LD   " $@;
 am__v_F77LD_1 = 
-SOURCES = $(dsvd_SOURCES) $(ssvd_SOURCES)
-DIST_SOURCES = $(dsvd_SOURCES) $(ssvd_SOURCES)
+SOURCES = dsvd.f ssvd.f
+DIST_SOURCES = dsvd.f ssvd.f
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -489,10 +492,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-dsvd_SOURCES = dsvd.f
-dsvd_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
-ssvd_SOURCES = ssvd.f
-ssvd_LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
+AM_DEFAULT_SOURCE_EXT = .f
+LDADD = ../../libarpack.la $(BLAS_LIBS) $(LAPACK_LIBS)
 all: all-am
 
 .SUFFIXES:
