@@ -19,7 +19,7 @@ addons:
 
 script:
   - ./bootstrap
-  - F77="gfortran-4.8" CFLAGS="-fno-omit-frame-pointer -fsanitize=address" ./configure --enable-mpi
+  - F77="gfortran-4.8" CFLAGS="-fno-omit-frame-pointer -fsanitize=address" ./configure
   - make all
   - make check
   - make distcheck
