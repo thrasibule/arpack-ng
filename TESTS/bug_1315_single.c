@@ -85,5 +85,7 @@ int main() {
       exit(EXIT_FAILURE);
     }
   }
+  free(dr);
+  free(di);
   return 0;
 }
